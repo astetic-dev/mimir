@@ -103,8 +103,8 @@ blind table below.
 
 | # | Subject | Result | Gate |
 |---|---|---|---|
-| A1 | `porter-intake-operator`, failure 1: drafts are generic rather than project-substantive | `OUT-OF-TAXONOMY` - a drafting step whose declared inputs never include the project state | PASS, 9 gates, 7 links, 10 quotes grounded |
-| A2 | `porter-intake-operator`, failure 2: no draft where one is expected | family 11, no canonical source - the draft trigger has three homes that disagree, and the two conflict rules order them differently | PASS, 9 gates, 7 links, 5 quotes grounded |
+| A1 | a private intake workspace, failure 1: drafts came out generic rather than substantive | `OUT-OF-TAXONOMY` - a drafting step whose declared inputs never include the project's own state. The gap it found became family 20 | PASS, 9 gates, 7 links, 10 quotes grounded. **Finding not published** - see `eval/receipts/applied/README.md` |
+| A2 | the same workspace, failure 2: no draft where one was expected | the same fact with three authoritative homes that disagree (family 11), with the workspace's own conflict rule elevating the narrowest | PASS, 9 gates, 7 links, 5 quotes grounded. **Finding not published** |
 | A3 | Mimir on Mimir, against the competition conditions | broken handoff (family 12) - the evidence layer is a program's output, so in a Claude Project no step can produce the declared input. **OVERTURNED by the owner the same day, on the finding's own third falsifier** - see `eval/receipts/applied/A3-OVERTURNED.md` | PASS, 9 gates, 8 links, 9 quotes grounded |
 
 A3 is the most useful of the three and it is the one that was wrong. It named three observations

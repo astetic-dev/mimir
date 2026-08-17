@@ -11,7 +11,7 @@ One run reported this, unprompted:
 > "Disclosure for the audit: `mimir\CLAUDE.md` was injected into my context automatically by the
 > harness as a project instruction file before my first action. I did not open it and did not act
 > on its routing beyond what `identity.md`/`rules.md` already say. Also auto-injected:
-> the operator global CLAUDE.md and the parent workspace CLAUDE.md."
+> the operator's global `~/.claude/CLAUDE.md` and the parent workspace's `CLAUDE.md`."
 
 That is correct and it applies to **every run in this folder**, not only the one that noticed.
 
