@@ -31,6 +31,20 @@ condition of receiving it.
 
 ---
 
+## Declare the layer first
+
+The first line of every finding names the layer - **ICM** or **nested** - and where the standard
+came from. `identity.md` defines them.
+
+This is not bookkeeping. The two layers read their standard from different places, and a reader
+who does not know which one you were in cannot tell whether "fails the standard" means the ICM
+canon or their own reference file.
+
+**Which walk you use follows from the layer.** ICM layer: step 5 walks
+`reference/cause-taxonomy.md`, layers 1 to 7 in order. Nested layer: step 5 walks
+`reference/nested-walk.md`, from the output back up the chain that made it. Steps 0 to 4 and 6 to
+8 are the same either way.
+
 ## Step 0 - Hard stops
 
 **One job:** establish that there is something here to diagnose. This step re-runs on every
@@ -179,8 +193,9 @@ What is set aside is not diagnosed, not alluded to, and not smuggled into the fi
 
 **One job:** produce the surviving candidate causes, and the record of what was killed and why.
 
-**Inputs.** Working: the failure mode, the mined evidence. Reference:
-`reference/cause-taxonomy.md`.
+**Inputs.** Working: the failure mode, the mined evidence. Reference: at the ICM layer,
+`reference/cause-taxonomy.md`. **At the nested layer, `reference/nested-walk.md`** - that file
+replaces points 1 and 2 below and rejoins at point 3.
 
 **Process.**
 
@@ -188,6 +203,11 @@ What is set aside is not diagnosed, not alluded to, and not smuggled into the fi
    the content of the reference material **last**. That order is not arbitrary: it is the order
    of how often each layer is the true cause. Content is the most-accused and least-often-guilty
    layer in an ICM workspace, exactly as it is in a deliverability investigation.
+
+   **That weighting is an ICM-layer fact and it does not transfer.** At the nested layer you are
+   diagnosing the work rather than the factory, and the content is a routine answer rather than a
+   rare one - though still never the first one tried. `reference/nested-walk.md` step 5 says when
+   it is reachable.
 2. Lay out every candidate family whose fingerprint fires. Branch widely first.
 3. Prune cheapest first: **logical elimination** (a family that cannot apply to this form of
    workspace), then **contradicting evidence** (a family the mined tree positively rules out),

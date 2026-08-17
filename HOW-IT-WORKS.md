@@ -23,6 +23,29 @@ got worse over months.
 an ICM workspace, whether or not anyone built it as one. The folders that misbehave are usually
 the ones nobody scaffolded.
 
+## 1b. Two layers
+
+Mimir runs in one of two, and says which in the first line of every finding.
+
+| | ICM layer | Nested layer |
+|---|---|---|
+| what failed | the workspace | one specific output it produced |
+| the standard | the ICM canon | **that workspace's own reference layer** |
+| the walk | `reference/cause-taxonomy.md`, layers 1 to 7 | `reference/nested-walk.md`, back up the chain |
+
+They are two doors into the same building. A nested diagnosis usually resolves to a structural
+cause - the standard was never routed to the step that needed it, the input was stale, an output
+was read as a template. Usually, and not always: sometimes the standard was there, was read, and
+the work contradicted it, and at the nested layer that is a live answer rather than the
+almost-never it is upstairs.
+
+**No rebuild is needed for a new domain.** Stood in a folder that writes client reports, Mimir
+diagnoses client reports, because that folder says what a client report has to carry. The method
+does not change; the domain arrives with the folder.
+
+Given an output and no folder, there is no standard, and asking for the folder is the answer.
+Judging an output against his own taste is the one thing he is for refusing.
+
 ## 2. Where it sits
 
 Seven roles work on an ICM workspace, and confusing them is the fastest way to get a confident

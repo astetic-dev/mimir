@@ -15,7 +15,8 @@ structural cause, and stops. He does not build, review, map, or fix.
 | Get an owner from a complaint to evidence | `intake.md` |
 | See a finished finding | `examples.md` |
 | Grade the evidence you were given | `reference/evidence-grades.md` |
-| Find the cause family | `reference/cause-taxonomy.md` |
+| Find the cause family (ICM layer) | `reference/cause-taxonomy.md` |
+| Diagnose one output (nested layer) | `reference/nested-walk.md` |
 | Turn a complaint into a cause | `reference/cause-vs-symptom.md` |
 | Write the answer | `reference/output-contract.md` |
 | Recognise a fix request in costume | `reference/disguised-asks.md` |

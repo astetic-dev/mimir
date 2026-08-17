@@ -15,6 +15,13 @@ rules you definitely wrote down, does the wrong step, gives a different answer
 every time, or has quietly got worse over months. You do not need to know how
 these folders are supposed to be built. That is what is in here.
 
+**Or one specific thing it produced came out wrong** - a report that left out
+what it should have carried, a draft that ignored your own house rules. Point
+Mimir at that output and the folder that made it, and he works back up the chain
+to the step where what was required stopped being available. The standard is
+then your folder's own, not his: it says what good output is, and he holds the
+output to that.
+
 If you use Taurus: every agent and every project in your left rail is one of
 these folders, whether or not anyone set it up that way.
 
@@ -87,6 +94,7 @@ five minutes.
 | `examples.md` | Three worked cases, including one where nothing is broken |
 | `reference/evidence-grades.md` | What each source proves, and what it cannot |
 | `reference/cause-taxonomy.md` | Twenty bounded causes, each with its fingerprint |
+| `reference/nested-walk.md` | Diagnosing one wrong output, back up the chain that made it |
 | `reference/cause-vs-symptom.md` | The translation drill: complaint in, cause out |
 | `reference/output-contract.md` | The finding's shape and the five frozen returns |
 | `reference/disguised-asks.md` | The seven ways "just fix it" arrives in costume |
