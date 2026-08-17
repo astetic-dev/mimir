@@ -46,7 +46,7 @@ import re
 import sys
 import tempfile
 
-VERSION = "mine.py 1.0"
+VERSION = "mine.py 1.1"
 
 SKIP_DIRS = {
     ".git", ".hg", ".svn", "node_modules", "__pycache__", ".venv", "venv",
@@ -183,21 +183,38 @@ def ignored(relpath, prefixes):
 
 
 def walk(root, ignore_prefixes=()):
+    """Returns (files, folders, ignored_files).
+
+    Ignored files are still listed, by path only. They are excluded from every
+    structural measurement - that is what the ignore file is for - but a reader
+    of the evidence still needs to know they exist. A reviewer pointing at a
+    real file in an ignored subtree is not citing a file that is not there, and
+    a checker that cannot tell those apart rejects correct work.
+    """
     files = []
     folders = []
+    ignored_files = []
     for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = sorted(d for d in dirnames if d not in SKIP_DIRS)
-        dirnames[:] = [d for d in dirnames
-                       if not ignored(rel(os.path.join(dirpath, d), root),
-                                      ignore_prefixes)]
+        keep = []
+        for d in dirnames:
+            full = os.path.join(dirpath, d)
+            if ignored(rel(full, root), ignore_prefixes):
+                for sub, _sd, sfn in os.walk(full):
+                    for f in sorted(sfn):
+                        ignored_files.append(rel(os.path.join(sub, f), root))
+            else:
+                keep.append(d)
+        dirnames[:] = keep
         for d in dirnames:
             folders.append(os.path.join(dirpath, d))
         for fn in sorted(filenames):
             full = os.path.join(dirpath, fn)
             if ignored(rel(full, root), ignore_prefixes):
+                ignored_files.append(rel(full, root))
                 continue
             files.append(full)
-    return files, folders
+    return files, folders, sorted(set(ignored_files))
 
 
 def classify_layer(relpath, name):
@@ -448,7 +465,7 @@ def mine(root):
         raise SystemExit("not a folder: %s" % root)
 
     ignore_prefixes = read_ignore(root)
-    files, folders = walk(root, ignore_prefixes)
+    files, folders, ignored_files = walk(root, ignore_prefixes)
     all_rel = set(rel(f, root) for f in files)
     folder_rel = set(rel(d, root) for d in folders)
 
@@ -866,6 +883,7 @@ def mine(root):
         "mtimeRange": {"oldest": min(mtimes) if mtimes else None,
                        "newest": max(mtimes) if mtimes else None},
         "form": {"guess": form, "why": why},
+        "ignoredFiles": ignored_files,
         "totals": {
             "files": len(file_records), "markdownFiles": len(md_paths),
             "folders": len(folder_rel), "bytes": total_bytes,
