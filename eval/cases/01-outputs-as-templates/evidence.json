@@ -1,0 +1,475 @@
+{
+  "generatedBy": "mine.py 1.0",
+  "workspace": "eval/cases/01-outputs-as-templates/workspace",
+  "mtimeRange": {
+    "oldest": 1786916382,
+    "newest": 1786916438
+  },
+  "form": {
+    "guess": "pipeline",
+    "why": "3 numbered stage folders"
+  },
+  "totals": {
+    "files": 12,
+    "markdownFiles": 11,
+    "folders": 9,
+    "bytes": 5610,
+    "estTokens": 1359
+  },
+  "entry": {
+    "files": [
+      "CLAUDE.md"
+    ],
+    "lines": 30,
+    "estTokens": 125,
+    "twins": [],
+    "twinsIdentical": null
+  },
+  "layers": {
+    "L0": [
+      "CLAUDE.md"
+    ],
+    "L1": [
+      "CONTEXT.md"
+    ],
+    "L2": [
+      "stages/01-collect/CONTEXT.md",
+      "stages/02-analyse/CONTEXT.md",
+      "stages/03-write/CONTEXT.md"
+    ],
+    "L3": [
+      "references/report-standards.md"
+    ],
+    "L4": [
+      "stages/01-collect/output/collected.md",
+      "stages/02-analyse/output/analysis.md",
+      "stages/03-write/output/2026-03-report.md",
+      "stages/03-write/output/2026-04-report.md",
+      "stages/03-write/output/2026-05-report.md"
+    ],
+    "template": [],
+    "meta": [],
+    "unclassified": [
+      "data/month.csv"
+    ]
+  },
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "layer": "L0",
+      "bytes": 550,
+      "mtime": 1786916382,
+      "lines": 30,
+      "estTokens": 125,
+      "headings": 4,
+      "proseLines": 1,
+      "links": 2
+    },
+    {
+      "path": "CONTEXT.md",
+      "layer": "L1",
+      "bytes": 397,
+      "mtime": 1786916386,
+      "lines": 15,
+      "estTokens": 99,
+      "headings": 3,
+      "proseLines": 2,
+      "links": 3
+    },
+    {
+      "path": "data/month.csv",
+      "layer": "unclassified",
+      "bytes": 107,
+      "mtime": 1786916415,
+      "lines": 0,
+      "estTokens": 0,
+      "headings": 0,
+      "proseLines": 0,
+      "links": 0
+    },
+    {
+      "path": "references/report-standards.md",
+      "layer": "L3",
+      "bytes": 863,
+      "mtime": 1786916394,
+      "lines": 31,
+      "estTokens": 215,
+      "headings": 6,
+      "proseLines": 10,
+      "links": 0
+    },
+    {
+      "path": "stages/01-collect/CONTEXT.md",
+      "layer": "L2",
+      "bytes": 533,
+      "mtime": 1786916398,
+      "lines": 25,
+      "estTokens": 133,
+      "headings": 5,
+      "proseLines": 2,
+      "links": 1
+    },
+    {
+      "path": "stages/01-collect/output/collected.md",
+      "layer": "L4",
+      "bytes": 230,
+      "mtime": 1786916420,
+      "lines": 10,
+      "estTokens": 57,
+      "headings": 1,
+      "proseLines": 1,
+      "links": 0
+    },
+    {
+      "path": "stages/02-analyse/CONTEXT.md",
+      "layer": "L2",
+      "bytes": 651,
+      "mtime": 1786916403,
+      "lines": 26,
+      "estTokens": 162,
+      "headings": 5,
+      "proseLines": 2,
+      "links": 3
+    },
+    {
+      "path": "stages/02-analyse/output/analysis.md",
+      "layer": "L4",
+      "bytes": 382,
+      "mtime": 1786916425,
+      "lines": 7,
+      "estTokens": 95,
+      "headings": 1,
+      "proseLines": 1,
+      "links": 0
+    },
+    {
+      "path": "stages/03-write/CONTEXT.md",
+      "layer": "L2",
+      "bytes": 662,
+      "mtime": 1786916408,
+      "lines": 26,
+      "estTokens": 165,
+      "headings": 5,
+      "proseLines": 2,
+      "links": 3
+    },
+    {
+      "path": "stages/03-write/output/2026-03-report.md",
+      "layer": "L4",
+      "bytes": 454,
+      "mtime": 1786916430,
+      "lines": 15,
+      "estTokens": 113,
+      "headings": 4,
+      "proseLines": 5,
+      "links": 0
+    },
+    {
+      "path": "stages/03-write/output/2026-04-report.md",
+      "layer": "L4",
+      "bytes": 393,
+      "mtime": 1786916433,
+      "lines": 15,
+      "estTokens": 98,
+      "headings": 4,
+      "proseLines": 5,
+      "links": 0
+    },
+    {
+      "path": "stages/03-write/output/2026-05-report.md",
+      "layer": "L4",
+      "bytes": 388,
+      "mtime": 1786916438,
+      "lines": 15,
+      "estTokens": 97,
+      "headings": 4,
+      "proseLines": 5,
+      "links": 0
+    }
+  ],
+  "stages": [
+    {
+      "folder": "stages/01-collect",
+      "index": "01",
+      "name": "collect",
+      "contract": "stages/01-collect/CONTEXT.md",
+      "contractSections": {
+        "inputs": true,
+        "process": true,
+        "outputs": true,
+        "humanCheck": true
+      },
+      "declaredInputs": [
+        {
+          "raw": "Working | `../../data/month.csv` | Full file | the raw figures",
+          "path": "../../data/month.csv",
+          "scope": "Full file",
+          "note": "Working | `../../data/month.csv` | Full file | the raw figures",
+          "resolved": "data/month.csv",
+          "exists": true,
+          "fromOutput": false,
+          "styleReference": false,
+          "targetLines": 0,
+          "targetTokens": 0,
+          "producedBySomeStage": null
+        }
+      ],
+      "declaredOutputs": [
+        {
+          "raw": "Tidied figures | `output/collected.md` | markdown",
+          "path": "output/collected.md",
+          "scope": "markdown",
+          "note": "Tidied figures | `output/collected.md` | markdown",
+          "resolved": "stages/01-collect/output/collected.md",
+          "exists": true,
+          "fromOutput": true,
+          "styleReference": false,
+          "targetLines": 10,
+          "targetTokens": 57
+        }
+      ],
+      "outputFolder": {
+        "path": "stages/01-collect/output",
+        "fileCount": 1,
+        "onlyGitkeep": false,
+        "empty": false
+      },
+      "loadEstimate": {
+        "entry": 125,
+        "contract": 133,
+        "inputs": 0,
+        "total": 258,
+        "band": "under"
+      }
+    },
+    {
+      "folder": "stages/02-analyse",
+      "index": "02",
+      "name": "analyse",
+      "contract": "stages/02-analyse/CONTEXT.md",
+      "contractSections": {
+        "inputs": true,
+        "process": true,
+        "outputs": true,
+        "humanCheck": true
+      },
+      "declaredInputs": [
+        {
+          "raw": "Working | `../01-collect/output/collected.md` | Full file | the figures",
+          "path": "../01-collect/output/collected.md",
+          "scope": "Full file",
+          "note": "Working | `../01-collect/output/collected.md` | Full file | the figures",
+          "resolved": "stages/01-collect/output/collected.md",
+          "exists": true,
+          "fromOutput": true,
+          "styleReference": false,
+          "targetLines": 10,
+          "targetTokens": 57,
+          "producedBySomeStage": true
+        },
+        {
+          "raw": "Reference | `../../references/report-standards.md` | \"Required content\" | what has to be covered",
+          "path": "../../references/report-standards.md",
+          "scope": "\"Required content\"",
+          "note": "Reference | `../../references/report-standards.md` | \"Required content\" | what has to be covered",
+          "resolved": "references/report-standards.md",
+          "exists": true,
+          "fromOutput": false,
+          "styleReference": false,
+          "targetLines": 31,
+          "targetTokens": 215,
+          "producedBySomeStage": null
+        }
+      ],
+      "declaredOutputs": [
+        {
+          "raw": "Findings | `output/analysis.md` | markdown",
+          "path": "output/analysis.md",
+          "scope": "markdown",
+          "note": "Findings | `output/analysis.md` | markdown",
+          "resolved": "stages/02-analyse/output/analysis.md",
+          "exists": true,
+          "fromOutput": true,
+          "styleReference": false,
+          "targetLines": 7,
+          "targetTokens": 95
+        }
+      ],
+      "outputFolder": {
+        "path": "stages/02-analyse/output",
+        "fileCount": 1,
+        "onlyGitkeep": false,
+        "empty": false
+      },
+      "loadEstimate": {
+        "entry": 125,
+        "contract": 162,
+        "inputs": 272,
+        "total": 559,
+        "band": "under"
+      }
+    },
+    {
+      "folder": "stages/03-write",
+      "index": "03",
+      "name": "write",
+      "contract": "stages/03-write/CONTEXT.md",
+      "contractSections": {
+        "inputs": true,
+        "process": true,
+        "outputs": true,
+        "humanCheck": true
+      },
+      "declaredInputs": [
+        {
+          "raw": "Working | `../02-analyse/output/analysis.md` | Full file | the findings",
+          "path": "../02-analyse/output/analysis.md",
+          "scope": "Full file",
+          "note": "Working | `../02-analyse/output/analysis.md` | Full file | the findings",
+          "resolved": "stages/02-analyse/output/analysis.md",
+          "exists": true,
+          "fromOutput": true,
+          "styleReference": false,
+          "targetLines": 7,
+          "targetTokens": 95,
+          "producedBySomeStage": true
+        },
+        {
+          "raw": "Reference | `output/2026-05-report.md` | Full file | follow the structure and tone of last month's report",
+          "path": "output/2026-05-report.md",
+          "scope": "Full file",
+          "note": "Reference | `output/2026-05-report.md` | Full file | follow the structure and tone of last month's report",
+          "resolved": "stages/03-write/output/2026-05-report.md",
+          "exists": true,
+          "fromOutput": true,
+          "styleReference": true,
+          "targetLines": 15,
+          "targetTokens": 97,
+          "producedBySomeStage": false
+        }
+      ],
+      "declaredOutputs": [
+        {
+          "raw": "Client report | `output/2026-06-report.md` | markdown",
+          "path": "output/2026-06-report.md",
+          "scope": "markdown",
+          "note": "Client report | `output/2026-06-report.md` | markdown",
+          "resolved": null,
+          "exists": false,
+          "fromOutput": true,
+          "styleReference": false,
+          "targetLines": null,
+          "targetTokens": null
+        }
+      ],
+      "outputFolder": {
+        "path": "stages/03-write/output",
+        "fileCount": 3,
+        "onlyGitkeep": false,
+        "empty": false
+      },
+      "loadEstimate": {
+        "entry": 125,
+        "contract": 165,
+        "inputs": 192,
+        "total": 482,
+        "band": "under"
+      }
+    }
+  ],
+  "graph": {
+    "edges": [
+      {
+        "from": "CLAUDE.md",
+        "to": "CONTEXT.md"
+      },
+      {
+        "from": "CLAUDE.md",
+        "to": "references/report-standards.md"
+      },
+      {
+        "from": "CONTEXT.md",
+        "to": "stages/01-collect/CONTEXT.md"
+      },
+      {
+        "from": "CONTEXT.md",
+        "to": "stages/02-analyse/CONTEXT.md"
+      },
+      {
+        "from": "CONTEXT.md",
+        "to": "stages/03-write/CONTEXT.md"
+      },
+      {
+        "from": "stages/01-collect/CONTEXT.md",
+        "to": "stages/01-collect/output/collected.md"
+      },
+      {
+        "from": "stages/02-analyse/CONTEXT.md",
+        "to": "stages/01-collect/output/collected.md"
+      },
+      {
+        "from": "stages/02-analyse/CONTEXT.md",
+        "to": "references/report-standards.md"
+      },
+      {
+        "from": "stages/02-analyse/CONTEXT.md",
+        "to": "stages/02-analyse/output/analysis.md"
+      },
+      {
+        "from": "stages/03-write/CONTEXT.md",
+        "to": "stages/02-analyse/output/analysis.md"
+      },
+      {
+        "from": "stages/03-write/CONTEXT.md",
+        "to": "stages/03-write/output/2026-05-report.md"
+      }
+    ],
+    "dangling": [],
+    "orphans": [],
+    "backReferences": [],
+    "declaredOutputsNotYetProduced": [
+      {
+        "from": "stages/03-write/CONTEXT.md",
+        "target": "output/2026-06-report.md",
+        "line": 22
+      }
+    ]
+  },
+  "placeholders": {
+    "total": 0,
+    "outsideTemplates": 0,
+    "sample": []
+  },
+  "duplication": [],
+  "routingPayload": [],
+  "naming": {
+    "violations": []
+  },
+  "schemaDrift": {
+    "schemaFile": null,
+    "declared": [],
+    "missingInTree": []
+  },
+  "index": {
+    "indexFiles": [],
+    "listedNotPresent": [],
+    "presentNotListed": []
+  },
+  "gates": {
+    "contractsTotal": 3,
+    "contractsWithHumanCheck": 3
+  },
+  "signal": {
+    "note": "HIGH",
+    "reasons": []
+  },
+  "heuristics": [
+    "form.guess",
+    "routingPayload",
+    "duplication",
+    "declaredInputs[].styleReference",
+    "estTokens",
+    "loadEstimate.band",
+    "schemaDrift"
+  ]
+}

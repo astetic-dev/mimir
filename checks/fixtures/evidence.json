@@ -1,0 +1,365 @@
+{
+  "generatedBy": "mine.py 1.0",
+  "workspace": "checks/fixtures/workspace",
+  "mtimeRange": {
+    "oldest": 1786915896,
+    "newest": 1786915939
+  },
+  "form": {
+    "guess": "pipeline",
+    "why": "2 numbered stage folders"
+  },
+  "totals": {
+    "files": 8,
+    "markdownFiles": 7,
+    "folders": 7,
+    "bytes": 6840,
+    "estTokens": 1696
+  },
+  "entry": {
+    "files": [
+      "CLAUDE.md"
+    ],
+    "lines": 135,
+    "estTokens": 1054,
+    "twins": [],
+    "twinsIdentical": null
+  },
+  "layers": {
+    "L0": [
+      "CLAUDE.md"
+    ],
+    "L1": [
+      "CONTEXT.md"
+    ],
+    "L2": [
+      "stages/01-gather/CONTEXT.md",
+      "stages/02-write/CONTEXT.md"
+    ],
+    "L3": [
+      "references/style-guide.md"
+    ],
+    "L4": [
+      "stages/01-gather/output/gathered.md",
+      "stages/02-write/output/.gitkeep"
+    ],
+    "template": [],
+    "meta": [],
+    "unclassified": [
+      "notes/week.md"
+    ]
+  },
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "layer": "L0",
+      "bytes": 4263,
+      "mtime": 1786915896,
+      "lines": 135,
+      "estTokens": 1054,
+      "headings": 7,
+      "proseLines": 48,
+      "links": 3
+    },
+    {
+      "path": "CONTEXT.md",
+      "layer": "L1",
+      "bytes": 315,
+      "mtime": 1786915900,
+      "lines": 14,
+      "estTokens": 78,
+      "headings": 3,
+      "proseLines": 2,
+      "links": 2
+    },
+    {
+      "path": "notes/week.md",
+      "layer": "unclassified",
+      "bytes": 400,
+      "mtime": 1786915918,
+      "lines": 13,
+      "estTokens": 100,
+      "headings": 1,
+      "proseLines": 7,
+      "links": 0
+    },
+    {
+      "path": "references/style-guide.md",
+      "layer": "L3",
+      "bytes": 515,
+      "mtime": 1786915914,
+      "lines": 22,
+      "estTokens": 128,
+      "headings": 5,
+      "proseLines": 8,
+      "links": 0
+    },
+    {
+      "path": "stages/01-gather/CONTEXT.md",
+      "layer": "L2",
+      "bytes": 588,
+      "mtime": 1786915905,
+      "lines": 26,
+      "estTokens": 147,
+      "headings": 5,
+      "proseLines": 3,
+      "links": 2
+    },
+    {
+      "path": "stages/01-gather/output/gathered.md",
+      "layer": "L4",
+      "bytes": 263,
+      "mtime": 1786915923,
+      "lines": 9,
+      "estTokens": 65,
+      "headings": 1,
+      "proseLines": 0,
+      "links": 0
+    },
+    {
+      "path": "stages/02-write/CONTEXT.md",
+      "layer": "L2",
+      "bytes": 496,
+      "mtime": 1786915909,
+      "lines": 22,
+      "estTokens": 124,
+      "headings": 4,
+      "proseLines": 1,
+      "links": 3
+    },
+    {
+      "path": "stages/02-write/output/.gitkeep",
+      "layer": "L4",
+      "bytes": 0,
+      "mtime": 1786915939,
+      "lines": 0,
+      "estTokens": 0,
+      "headings": 0,
+      "proseLines": 0,
+      "links": 0
+    }
+  ],
+  "stages": [
+    {
+      "folder": "stages/01-gather",
+      "index": "01",
+      "name": "gather",
+      "contract": "stages/01-gather/CONTEXT.md",
+      "contractSections": {
+        "inputs": true,
+        "process": true,
+        "outputs": true,
+        "humanCheck": true
+      },
+      "declaredInputs": [
+        {
+          "raw": "Working | `../../notes/week.md` | Full file | the raw material",
+          "path": "../../notes/week.md",
+          "scope": "Full file",
+          "note": "Working | `../../notes/week.md` | Full file | the raw material",
+          "resolved": "notes/week.md",
+          "exists": true,
+          "fromOutput": false,
+          "styleReference": false,
+          "targetLines": 13,
+          "targetTokens": 100,
+          "producedBySomeStage": null
+        }
+      ],
+      "declaredOutputs": [
+        {
+          "raw": "Ordered week | `output/gathered.md` | markdown",
+          "path": "output/gathered.md",
+          "scope": "markdown",
+          "note": "Ordered week | `output/gathered.md` | markdown",
+          "resolved": "stages/01-gather/output/gathered.md",
+          "exists": true,
+          "fromOutput": true,
+          "styleReference": false,
+          "targetLines": 9,
+          "targetTokens": 65
+        }
+      ],
+      "outputFolder": {
+        "path": "stages/01-gather/output",
+        "fileCount": 1,
+        "onlyGitkeep": false,
+        "empty": false
+      },
+      "loadEstimate": {
+        "entry": 1054,
+        "contract": 147,
+        "inputs": 100,
+        "total": 1301,
+        "band": "under"
+      }
+    },
+    {
+      "folder": "stages/02-write",
+      "index": "02",
+      "name": "write",
+      "contract": "stages/02-write/CONTEXT.md",
+      "contractSections": {
+        "inputs": true,
+        "process": true,
+        "outputs": true,
+        "humanCheck": false
+      },
+      "declaredInputs": [
+        {
+          "raw": "Working | `../01-gather/output/gathered.md` | Full file | what happened",
+          "path": "../01-gather/output/gathered.md",
+          "scope": "Full file",
+          "note": "Working | `../01-gather/output/gathered.md` | Full file | what happened",
+          "resolved": "stages/01-gather/output/gathered.md",
+          "exists": true,
+          "fromOutput": true,
+          "styleReference": false,
+          "targetLines": 9,
+          "targetTokens": 65,
+          "producedBySomeStage": true
+        },
+        {
+          "raw": "Reference | `../../references/style-guide.md` | Full file | how to write it",
+          "path": "../../references/style-guide.md",
+          "scope": "Full file",
+          "note": "Reference | `../../references/style-guide.md` | Full file | how to write it",
+          "resolved": "references/style-guide.md",
+          "exists": true,
+          "fromOutput": false,
+          "styleReference": true,
+          "targetLines": 22,
+          "targetTokens": 128,
+          "producedBySomeStage": null
+        }
+      ],
+      "declaredOutputs": [
+        {
+          "raw": "Post | `output/post.md` | markdown",
+          "path": "output/post.md",
+          "scope": "markdown",
+          "note": "Post | `output/post.md` | markdown",
+          "resolved": null,
+          "exists": false,
+          "fromOutput": true,
+          "styleReference": false,
+          "targetLines": null,
+          "targetTokens": null
+        }
+      ],
+      "outputFolder": {
+        "path": "stages/02-write/output",
+        "fileCount": 0,
+        "onlyGitkeep": true,
+        "empty": false
+      },
+      "loadEstimate": {
+        "entry": 1054,
+        "contract": 124,
+        "inputs": 193,
+        "total": 1371,
+        "band": "under"
+      }
+    }
+  ],
+  "graph": {
+    "edges": [
+      {
+        "from": "CLAUDE.md",
+        "to": "CONTEXT.md"
+      },
+      {
+        "from": "CLAUDE.md",
+        "to": "stages/01-gather/CONTEXT.md"
+      },
+      {
+        "from": "CLAUDE.md",
+        "to": "stages/02-write/CONTEXT.md"
+      },
+      {
+        "from": "CONTEXT.md",
+        "to": "stages/01-gather/CONTEXT.md"
+      },
+      {
+        "from": "CONTEXT.md",
+        "to": "stages/02-write/CONTEXT.md"
+      },
+      {
+        "from": "stages/01-gather/CONTEXT.md",
+        "to": "notes/week.md"
+      },
+      {
+        "from": "stages/01-gather/CONTEXT.md",
+        "to": "stages/01-gather/output/gathered.md"
+      },
+      {
+        "from": "stages/02-write/CONTEXT.md",
+        "to": "stages/01-gather/output/gathered.md"
+      },
+      {
+        "from": "stages/02-write/CONTEXT.md",
+        "to": "references/style-guide.md"
+      }
+    ],
+    "dangling": [],
+    "orphans": [],
+    "backReferences": [],
+    "declaredOutputsNotYetProduced": [
+      {
+        "from": "stages/02-write/CONTEXT.md",
+        "target": "output/post.md",
+        "line": 22
+      }
+    ]
+  },
+  "placeholders": {
+    "total": 0,
+    "outsideTemplates": 0,
+    "sample": []
+  },
+  "duplication": [],
+  "routingPayload": [
+    {
+      "path": "CLAUDE.md",
+      "layer": "L0",
+      "lines": 135,
+      "limit": 60,
+      "proseLines": 48,
+      "proseRatio": 0.356,
+      "contentHeadings": [
+        "Voice rules",
+        "Examples"
+      ]
+    }
+  ],
+  "naming": {
+    "violations": []
+  },
+  "schemaDrift": {
+    "schemaFile": null,
+    "declared": [],
+    "missingInTree": []
+  },
+  "index": {
+    "indexFiles": [],
+    "listedNotPresent": [],
+    "presentNotListed": []
+  },
+  "gates": {
+    "contractsTotal": 2,
+    "contractsWithHumanCheck": 1
+  },
+  "signal": {
+    "note": "MEDIUM",
+    "reasons": []
+  },
+  "heuristics": [
+    "form.guess",
+    "routingPayload",
+    "duplication",
+    "declaredInputs[].styleReference",
+    "estTokens",
+    "loadEstimate.band",
+    "schemaDrift"
+  ]
+}

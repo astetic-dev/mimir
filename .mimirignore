@@ -1,0 +1,11 @@
+# Folders that hold other people's workspaces, not this one.
+# mine.py skips these when mining Mimir itself, so the self-mine measures
+# Mimir rather than Mimir plus six fixtures.
+#
+# checks/fixtures is test material: ten deliberately near-identical findings
+# and a deliberately broken workspace. Measuring them alongside the doctrine
+# reports the near-duplication as a canonical-source problem, which is a
+# confident wrong reading of a folder that is doing exactly what it should.
+eval
+checks/fixtures
+self-evidence.json

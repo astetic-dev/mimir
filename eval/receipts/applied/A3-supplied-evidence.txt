@@ -1,0 +1,47 @@
+=== SUPPLIED EVIDENCE, document 1: competition 10 result post, as pasted by the owner ===
+
+What we actually judged
+
+The post asked for one folder a stranger can drop into a Claude project.
+identity.md, rules.md, examples.md, reference/, README.md. It reads something
+broken and says why. Not how to fix it.
+
+Four questions, from the post:
+Does it diagnose? One cause. Not a list. Not a prescription.
+Is the domain specific enough to be useful?
+Does each file do one job?
+Can a stranger figure it out?
+
+That is an outcome. Can a person who is not already in your head use this to see
+why something in their world broke.
+
+A lot of the field went further. Refusal paths. Verifiers. Blind runs. Preserved
+failures. Those are real, and they are extra. We did not pick a winner on the
+extra. We picked a winner on the ask.
+
+Winner: Colm Whelan, Inbox Autopsy. A stranger holding a bounced invoice can
+drop the folder in and see why it bounced. That was the assignment.
+
+Colm is the pile-winner you can hand to someone who does not already know the
+domain. The interview assumes you have never heard of an NDR. That is the
+product.
+
+
+=== SUPPLIED EVIDENCE, document 2: WITHHELD ===
+
+The second document supplied to this run was an excerpt from the owner's private
+competition playbook - his own notes on what decides these rounds. It is not
+published here.
+
+Link 7 of the finding quotes one line from it. That link therefore cites a
+source a reader of this repository cannot open, and should not be treated as
+grounded. The finding is preserved exactly as returned rather than edited around
+the gap; see applied/README.md.
+
+
+=== SUPPLIED EVIDENCE, document 3: the owner's runtime decision, as stated in
+    the build session ===
+
+"we gaan uit van integratie in Taurus dus Claude Code is aanwezig als minimaal
+vereiste.. alles op claude.ai laten we er buiten alleen focus op claude code +
+taurus"

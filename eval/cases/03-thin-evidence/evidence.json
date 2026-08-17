@@ -1,0 +1,115 @@
+{
+  "generatedBy": "mine.py 1.0",
+  "workspace": "eval/cases/03-thin-evidence/workspace",
+  "mtimeRange": {
+    "oldest": 1786916568,
+    "newest": 1786916572
+  },
+  "form": {
+    "guess": "flat",
+    "why": "2 markdown files, no folder contracts"
+  },
+  "totals": {
+    "files": 2,
+    "markdownFiles": 2,
+    "folders": 0,
+    "bytes": 434,
+    "estTokens": 108
+  },
+  "entry": {
+    "files": [
+      "CLAUDE.md"
+    ],
+    "lines": 12,
+    "estTokens": 69,
+    "twins": [],
+    "twinsIdentical": null
+  },
+  "layers": {
+    "L0": [
+      "CLAUDE.md"
+    ],
+    "L1": [],
+    "L2": [],
+    "L3": [
+      "notes.md"
+    ],
+    "L4": [],
+    "template": [],
+    "meta": [],
+    "unclassified": []
+  },
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "layer": "L0",
+      "bytes": 276,
+      "mtime": 1786916568,
+      "lines": 12,
+      "estTokens": 69,
+      "headings": 3,
+      "proseLines": 4,
+      "links": 0
+    },
+    {
+      "path": "notes.md",
+      "layer": "L3",
+      "bytes": 158,
+      "mtime": 1786916572,
+      "lines": 7,
+      "estTokens": 39,
+      "headings": 1,
+      "proseLines": 1,
+      "links": 0
+    }
+  ],
+  "stages": [],
+  "graph": {
+    "edges": [],
+    "dangling": [],
+    "orphans": [
+      "notes.md"
+    ],
+    "backReferences": [],
+    "declaredOutputsNotYetProduced": []
+  },
+  "placeholders": {
+    "total": 0,
+    "outsideTemplates": 0,
+    "sample": []
+  },
+  "duplication": [],
+  "routingPayload": [],
+  "naming": {
+    "violations": []
+  },
+  "schemaDrift": {
+    "schemaFile": null,
+    "declared": [],
+    "missingInTree": []
+  },
+  "index": {
+    "indexFiles": [],
+    "listedNotPresent": [],
+    "presentNotListed": []
+  },
+  "gates": {
+    "contractsTotal": 0,
+    "contractsWithHumanCheck": 0
+  },
+  "signal": {
+    "note": "LOW",
+    "reasons": [
+      "under 3 markdown files"
+    ]
+  },
+  "heuristics": [
+    "form.guess",
+    "routingPayload",
+    "duplication",
+    "declaredInputs[].styleReference",
+    "estTokens",
+    "loadEstimate.band",
+    "schemaDrift"
+  ]
+}

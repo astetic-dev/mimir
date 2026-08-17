@@ -1,0 +1,348 @@
+{
+  "generatedBy": "mine.py 1.0",
+  "workspace": "eval/cases/02-healthy-with-a-gate/workspace",
+  "mtimeRange": {
+    "oldest": 1786916505,
+    "newest": 1786916537
+  },
+  "form": {
+    "guess": "pipeline",
+    "why": "2 numbered stage folders"
+  },
+  "totals": {
+    "files": 8,
+    "markdownFiles": 7,
+    "folders": 7,
+    "bytes": 3106,
+    "estTokens": 773
+  },
+  "entry": {
+    "files": [
+      "CLAUDE.md"
+    ],
+    "lines": 10,
+    "estTokens": 59,
+    "twins": [],
+    "twinsIdentical": null
+  },
+  "layers": {
+    "L0": [
+      "CLAUDE.md"
+    ],
+    "L1": [
+      "CONTEXT.md"
+    ],
+    "L2": [
+      "stages/01-extract/CONTEXT.md",
+      "stages/02-actions/CONTEXT.md"
+    ],
+    "L3": [
+      "references/action-format.md"
+    ],
+    "L4": [
+      "stages/01-extract/output/marked.md",
+      "stages/02-actions/output/.gitkeep"
+    ],
+    "template": [],
+    "meta": [],
+    "unclassified": [
+      "input/transcript.md"
+    ]
+  },
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "layer": "L0",
+      "bytes": 236,
+      "mtime": 1786916505,
+      "lines": 10,
+      "estTokens": 59,
+      "headings": 2,
+      "proseLines": 1,
+      "links": 2
+    },
+    {
+      "path": "CONTEXT.md",
+      "layer": "L1",
+      "bytes": 235,
+      "mtime": 1786916509,
+      "lines": 10,
+      "estTokens": 58,
+      "headings": 2,
+      "proseLines": 1,
+      "links": 2
+    },
+    {
+      "path": "input/transcript.md",
+      "layer": "unclassified",
+      "bytes": 315,
+      "mtime": 1786916530,
+      "lines": 11,
+      "estTokens": 78,
+      "headings": 1,
+      "proseLines": 5,
+      "links": 0
+    },
+    {
+      "path": "references/action-format.md",
+      "layer": "L3",
+      "bytes": 574,
+      "mtime": 1786916515,
+      "lines": 16,
+      "estTokens": 143,
+      "headings": 1,
+      "proseLines": 5,
+      "links": 0
+    },
+    {
+      "path": "stages/01-extract/CONTEXT.md",
+      "layer": "L2",
+      "bytes": 658,
+      "mtime": 1786916520,
+      "lines": 26,
+      "estTokens": 164,
+      "headings": 5,
+      "proseLines": 3,
+      "links": 2
+    },
+    {
+      "path": "stages/01-extract/output/marked.md",
+      "layer": "L4",
+      "bytes": 399,
+      "mtime": 1786916534,
+      "lines": 10,
+      "estTokens": 99,
+      "headings": 1,
+      "proseLines": 1,
+      "links": 0
+    },
+    {
+      "path": "stages/02-actions/CONTEXT.md",
+      "layer": "L2",
+      "bytes": 689,
+      "mtime": 1786916526,
+      "lines": 27,
+      "estTokens": 172,
+      "headings": 5,
+      "proseLines": 3,
+      "links": 3
+    },
+    {
+      "path": "stages/02-actions/output/.gitkeep",
+      "layer": "L4",
+      "bytes": 0,
+      "mtime": 1786916537,
+      "lines": 0,
+      "estTokens": 0,
+      "headings": 0,
+      "proseLines": 0,
+      "links": 0
+    }
+  ],
+  "stages": [
+    {
+      "folder": "stages/01-extract",
+      "index": "01",
+      "name": "extract",
+      "contract": "stages/01-extract/CONTEXT.md",
+      "contractSections": {
+        "inputs": true,
+        "process": true,
+        "outputs": true,
+        "humanCheck": true
+      },
+      "declaredInputs": [
+        {
+          "raw": "Working | `../../input/transcript.md` | Full file | the raw meeting",
+          "path": "../../input/transcript.md",
+          "scope": "Full file",
+          "note": "Working | `../../input/transcript.md` | Full file | the raw meeting",
+          "resolved": "input/transcript.md",
+          "exists": true,
+          "fromOutput": false,
+          "styleReference": false,
+          "targetLines": 11,
+          "targetTokens": 78,
+          "producedBySomeStage": null
+        }
+      ],
+      "declaredOutputs": [
+        {
+          "raw": "Marked transcript | `output/marked.md` | markdown",
+          "path": "output/marked.md",
+          "scope": "markdown",
+          "note": "Marked transcript | `output/marked.md` | markdown",
+          "resolved": "stages/01-extract/output/marked.md",
+          "exists": true,
+          "fromOutput": true,
+          "styleReference": false,
+          "targetLines": 10,
+          "targetTokens": 99
+        }
+      ],
+      "outputFolder": {
+        "path": "stages/01-extract/output",
+        "fileCount": 1,
+        "onlyGitkeep": false,
+        "empty": false
+      },
+      "loadEstimate": {
+        "entry": 59,
+        "contract": 164,
+        "inputs": 78,
+        "total": 301,
+        "band": "under"
+      }
+    },
+    {
+      "folder": "stages/02-actions",
+      "index": "02",
+      "name": "actions",
+      "contract": "stages/02-actions/CONTEXT.md",
+      "contractSections": {
+        "inputs": true,
+        "process": true,
+        "outputs": true,
+        "humanCheck": true
+      },
+      "declaredInputs": [
+        {
+          "raw": "Working | `../01-extract/output/marked.md` | Full file | what was settled",
+          "path": "../01-extract/output/marked.md",
+          "scope": "Full file",
+          "note": "Working | `../01-extract/output/marked.md` | Full file | what was settled",
+          "resolved": "stages/01-extract/output/marked.md",
+          "exists": true,
+          "fromOutput": true,
+          "styleReference": false,
+          "targetLines": 10,
+          "targetTokens": 99,
+          "producedBySomeStage": true
+        },
+        {
+          "raw": "Reference | `../../references/action-format.md` | Full file | the four required fields",
+          "path": "../../references/action-format.md",
+          "scope": "Full file",
+          "note": "Reference | `../../references/action-format.md` | Full file | the four required fields",
+          "resolved": "references/action-format.md",
+          "exists": true,
+          "fromOutput": false,
+          "styleReference": true,
+          "targetLines": 16,
+          "targetTokens": 143,
+          "producedBySomeStage": null
+        }
+      ],
+      "declaredOutputs": [
+        {
+          "raw": "Action list | `output/actions.md` | markdown",
+          "path": "output/actions.md",
+          "scope": "markdown",
+          "note": "Action list | `output/actions.md` | markdown",
+          "resolved": null,
+          "exists": false,
+          "fromOutput": true,
+          "styleReference": false,
+          "targetLines": null,
+          "targetTokens": null
+        }
+      ],
+      "outputFolder": {
+        "path": "stages/02-actions/output",
+        "fileCount": 0,
+        "onlyGitkeep": true,
+        "empty": false
+      },
+      "loadEstimate": {
+        "entry": 59,
+        "contract": 172,
+        "inputs": 242,
+        "total": 473,
+        "band": "under"
+      }
+    }
+  ],
+  "graph": {
+    "edges": [
+      {
+        "from": "CLAUDE.md",
+        "to": "CONTEXT.md"
+      },
+      {
+        "from": "CLAUDE.md",
+        "to": "references/action-format.md"
+      },
+      {
+        "from": "CONTEXT.md",
+        "to": "stages/01-extract/CONTEXT.md"
+      },
+      {
+        "from": "CONTEXT.md",
+        "to": "stages/02-actions/CONTEXT.md"
+      },
+      {
+        "from": "stages/01-extract/CONTEXT.md",
+        "to": "input/transcript.md"
+      },
+      {
+        "from": "stages/01-extract/CONTEXT.md",
+        "to": "stages/01-extract/output/marked.md"
+      },
+      {
+        "from": "stages/02-actions/CONTEXT.md",
+        "to": "stages/01-extract/output/marked.md"
+      },
+      {
+        "from": "stages/02-actions/CONTEXT.md",
+        "to": "references/action-format.md"
+      }
+    ],
+    "dangling": [],
+    "orphans": [],
+    "backReferences": [],
+    "declaredOutputsNotYetProduced": [
+      {
+        "from": "stages/02-actions/CONTEXT.md",
+        "target": "output/actions.md",
+        "line": 22
+      }
+    ]
+  },
+  "placeholders": {
+    "total": 0,
+    "outsideTemplates": 0,
+    "sample": []
+  },
+  "duplication": [],
+  "routingPayload": [],
+  "naming": {
+    "violations": []
+  },
+  "schemaDrift": {
+    "schemaFile": null,
+    "declared": [],
+    "missingInTree": []
+  },
+  "index": {
+    "indexFiles": [],
+    "listedNotPresent": [],
+    "presentNotListed": []
+  },
+  "gates": {
+    "contractsTotal": 2,
+    "contractsWithHumanCheck": 2
+  },
+  "signal": {
+    "note": "MEDIUM",
+    "reasons": []
+  },
+  "heuristics": [
+    "form.guess",
+    "routingPayload",
+    "duplication",
+    "declaredInputs[].styleReference",
+    "estTokens",
+    "loadEstimate.band",
+    "schemaDrift"
+  ]
+}
