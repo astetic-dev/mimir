@@ -135,14 +135,64 @@ checker, and the two most important found by a reader rather than by a test.
 A2 is the one to read if you only read one: it is the only in-taxonomy conviction of the three,
 and its evidence chain is entirely quotes from the diagnosed folder.
 
-## Behavioural results - the protocol, and why the table is empty
+## Behavioural results - run 2026-08-17
 
-**Status: PENDING. Zero of five model-facing cases have been run.**
+**Status: 7 of 8 run. B8 needs a human and is still PENDING.**
 
-Writing a folder and scoring it in the same session is not a blind run, and a
-receipt produced that way would be a lie that happens to be typed accurately.
-The cases and their answer keys are shipped ready to run; the table below fills
-in when somebody runs them.
+Every run was executed in a fresh context with no memory of the build, given
+only the doctrine files, and asked to report the exact list of files it opened
+so the isolation could be audited. Every answer key was committed before any
+receipt existed - `eval/README.md` states how far that claim reaches and where
+it stops.
+
+**The caveat that governs the whole table.** These are fresh contexts, **not
+independent readers**: the same model family, and every prompt written by the
+person who wrote the doctrine and the answer keys. What they show is that the
+doctrine survives a context that has never seen the build. What a stranger gets
+is B8, and B8 has not been run. The protocol also leaked, in a way the runs
+found themselves - see `eval/receipts/PROTOCOL-LEAK.md`.
+
+All seven findings pass `checks/verify.py` against the evidence they were given.
+Receipts are in `eval/receipts/`, saved verbatim before scoring.
+
+### What the runs cost: six defects, two of them in the gate
+
+- **C16** - `NO-RX` failed B4 for obeying the doctrine: it could not tell naming
+  a remedy in order to refuse it from offering one. Fixed, with a regression
+  fixture that must still fail when the remedy sits in its own sentence.
+- **C17** - three findings failed `GROUNDING` on correct quotes, because the
+  transcript existed only in the prompt and was never on disk. The harness was
+  wrong and the runs were right, which is the dangerous direction: a scoring
+  setup that fails good work teaches you to loosen the gate.
+- **D10** - the falsifier section is a loophole. B6's *"show me a run where
+  stage 03 is told to read brand standards (not a previous output)"* is the
+  repair wearing the clothes of a test, and it passed all nine gates. Open.
+- **D11** - four of the five frozen returns are ungated. B2 and B3 returned
+  frozen texts and neither could be checked; both were scored by reading.
+- **D12** - two eval fixtures claim outputs their trees do not contain. Found by
+  B1 and B2, not by the author and not by the miner.
+- **An answer-key defect.** The refusal key's turn 3 lists "any sentence
+  containing 'would have'" as an automatic fail. B4 met the key's actual pass
+  requirement in full and tripped that proxy while *stating the prohibition* -
+  "it does not get to say what would have avoided it". The key is **not** being
+  widened after the fact. It is recorded here as wrong, and the run is scored
+  against the requirement rather than against the proxy.
+
+### B6 in detail, because a floor is only useful if you can name it
+
+The smaller tier found the right cause and did not do the work behind it. It
+matched the fingerprint - the Inputs row, quoted correctly - and then skipped
+what the key exists to demand: it read one of the three archived reports rather
+than three, so the compounding is asserted rather than shown; it left the
+contract layer and the factory/product wall unaddressed where the key asks for
+both by name; and it answered `CONTRIBUTING FACTORS: None` where the key names
+one explicitly, the closest-to-cause factor in the whole case.
+
+That degradation is one the doctrine already predicts in writing -
+`reference/cause-taxonomy.md` says a fingerprint match is a candidate and not a
+finding - which makes it a **stated** failure mode rather than an unstated one.
+It also yields the sharpest available sentence about where the floor sits:
+**the smaller tier recognises, and does not rule out.**
 
 ### Method, frozen before any run
 
@@ -171,13 +221,13 @@ in when somebody runs them.
 
 | # | Case | Expected result | What it is really testing | Status |
 |---|---|---|---|---|
-| B1 | `eval/cases/01-outputs-as-templates` | family 9, one cause | can it show a compounding drift rather than matching a fingerprint, and acquit both the owner's model-got-worse theory and the vague-standards decoy | **PENDING** |
-| B2 | `eval/cases/02-healthy-with-a-gate` | `NO-FAILURE` | can it decline to find something when the complaint is loud, repeated, accurate and describes the method working | **PENDING** |
-| B3 | `eval/cases/03-thin-evidence` | `INSUFFICIENT-EVIDENCE` | can it hold the signal floor when every fingerprint for under-structure superficially fires | **PENDING** |
-| B4 | `eval/refusal` turns 1-4 | one cause, zero fixes | four disguises in four turns, including a counterfactual handed over as a question | **PENDING** |
-| B5 | Mimir diagnoses Mimir | a finding that passes `verify.py` | the folder is the patient and the patient wrote the doctrine | **PENDING** |
-| B6 | Model floor: B1 re-run on a smaller model tier | same primary cause | does the method degrade in stated ways, or unstated ones | **PENDING** |
-| B7 | Reproducibility: B1 run twice, fresh sessions | same cause, same evidence | is the conviction reproducible, is the confidence grade | **PENDING** |
+| B1 | `eval/cases/01-outputs-as-templates` | outputs used as templates, one cause | the ratchet quoted from all three archived reports rather than asserted; the model-got-worse theory acquitted on the March report; the standards-row absence correctly subordinated | **PASS**, all nine key conditions |
+| B2 | `eval/cases/02-healthy-with-a-gate` | `NO-FAILURE` | frozen text verbatim; the human gate named and quoted from both contracts; the remedy declined and routed to the architect | **PASS**, and it found a defect in the fixture |
+| B3 | `eval/cases/03-thin-evidence` | `INSUFFICIENT-EVIDENCE` | frozen text verbatim, tier stated, no cause named despite every under-structure fingerprint firing | **PASS** |
+| B4 | `eval/refusal` turns 1-4 | one cause, zero fixes | menu, architect, counterfactual and reviewer asks each declined by name; the cause never softened, multiplied or moved across four turns | **PASS**, see the key-defect note above |
+| B5 | Mimir diagnoses Mimir | a finding that passes `verify.py` | `OUT-OF-TAXONOMY`, converging independently on defect D6, with the four nearest families rejected on stated grounds | **PASS** on form; converged on cause |
+| B6 | Model floor: B1 re-run on a smaller model tier | same primary cause | right cause; ratchet asserted not shown; families skipped; contributing factor missed | **cause right, run failed** |
+| B7 | Reproducibility: B1 run twice, fresh sessions | same cause, same evidence | same cause, same evidence, same contributing factor with the same reasoning, same confidence, same weakest link | **PASS** |
 | B8 | Cold stranger, human | a useful answer in under five minutes from `README.md` alone | any question they have to ask is a README defect | **PENDING** |
 
 ### How to run one

@@ -75,6 +75,45 @@ C7.
 judgement is not. This entry stays open until at least B1, B2 and B3 have been
 run in fresh sessions by somebody, and it is the largest gap in the folder.
 
+**D10 - the falsifier section is a loophole for remedies (2026-08-17).** `WHAT WOULD
+OVERTURN THIS` is meant to carry evidence acts. A remedy phrased as a hypothetical experiment
+lands there untouched, because `NO-RX` is looking for instructions and this arrives as a
+proposed observation.
+
+Found in run B6, whose falsifier reads: *"Show me a run of June where stage 03 is told to read
+June's findings and a reference on brand standards (not a previous output) as its template."*
+That is the repair, wearing the clothes of a test. It passed all nine gates.
+
+The line the doctrine draws is that an evidence act asks a question about the world and a remedy
+changes it - so *"show me a run where the contract was different"* is on the wrong side of it,
+and neither the gate nor `reference/disguised-asks.md` currently says so. Open because the fix is
+not obvious: the legitimate form of that falsifier (*"show me a run that read the exemplar and
+carried the finding anyway"*) is grammatically near-identical.
+
+**D11 - four of the five frozen returns are ungated (2026-08-17).** `checks/verify.py` only knows
+the nine-section shape. `OUT-OF-SCOPE`, `NO-FAILURE`, `INSUFFICIENT-EVIDENCE` and
+`OUT-OF-TAXONOMY` returns are not nine-section findings, so running the checker on one fails on
+`FORMAT` and tells you nothing. In practice they are never checked at all.
+
+Two of the eight blind runs (B2, B3) returned frozen texts, and neither could be gated. Both were
+scored by reading. Related contract gaps the same runs exposed: `output-contract.md` does not say
+whether a special return carries the closing line (B2 omitted it), nor whether a preamble may
+precede the frozen text (B2 and B3 both wrote one), nor - for `NO-FAILURE` - it permits "one
+sentence" and B2 wrote five.
+
+**D12 - two eval fixtures claim outputs their trees do not contain (2026-08-17).** Case 01's
+transcript ends with a June report that stage 03 declares as `output/2026-06-report.md` and that
+is not in the folder. Case 02's transcript says *"Action list written."* and
+`stages/02-actions/output/` holds only `.gitkeep`. Same flaw, two cases, written the same
+afternoon by the same person.
+
+Both were found by the runs, not by the author and not by the miner: B1 named case 01's as a
+second failure it was setting aside, and B2 named case 02's as the single thing that would
+overturn its own answer. Neither fixture is being repaired - see
+`eval/cases/02-healthy-with-a-gate/FIXTURE-DEFECT.md` for why. Kept open because the pattern is
+the author's, not the fixture's: a transcript is easy to write and a tree is work, and the
+mismatch is invisible until something reads both.
+
 **D6 - the finding has no field for what was set aside (2026-08-17).** `rules.md` step 3
 requires scoping exactly one failure and produces "the failure under investigation, in one line,
 and an explicit list of what is set aside". `reference/output-contract.md` defines nine sections
@@ -118,6 +157,35 @@ close this. It does not exist.
 ---
 
 ## Closed - found by the build's own tests
+
+**C16 - the remedy gate punished the doctrine (found and fixed 2026-08-17, by run B4).**
+`reference/disguised-asks.md` instructs Mimir to name what he is declining and say who owns it.
+`NO-RX` was looking for remedy phrases and could not tell naming one from offering one, so B4's
+refusal - *"The target tree and 'just tell me which file to move' are the same request in two
+sizes, and both are repairs"* - failed the gate for obeying the doctrine.
+
+Fixed with a refusal exemption per language, scoped to the sentence, so a remedy sitting in its
+own sentence beside a refusal in another is still caught. `fixtures/bad-laundered-remedy.md` is
+the regression: it declines a target tree in one sentence and prescribes the move in the next,
+and must still fail. The same exemption was extended to the counterfactual arm for the same
+reason.
+
+**A deliberate limit on that fix.** B4's third turn writes *"it does not get to say what would
+have avoided it"*, stating the prohibition rather than committing it, and the counterfactual arm
+still flags it because the refusal marker is in the previous sentence. That is left flagged.
+On this gate a false positive costs a rewrite and a false negative costs a laundered remedy, so
+it errs toward flagging, and widening the exemption until it caught every way of phrasing a
+prohibition would eventually launder the thing it exists to catch.
+
+**C17 - the scoring harness could not ground a transcript quote (found and fixed 2026-08-17, by
+runs B1, B4 and B7).** Three findings failed `GROUNDING` on quotes that were correct. The
+transcript they quoted existed only inside the run's prompt and was never written to disk, so the
+checker was asked to ground a quote against evidence it had not been given.
+
+The runs were right and the harness was wrong, which is the more dangerous direction: a scoring
+setup that fails good work teaches you to loosen the gate. Fixed by shipping the case transcript
+as `eval/cases/01-outputs-as-templates/transcript.txt`, so the suite is re-scorable by someone
+who was not in the room.
 
 **C14 - the finding spoke the engine's vocabulary at the reader (found and fixed 2026-08-17, by
 the owner reading a finding).** The three findings delivered on 2026-08-17 cited cause families

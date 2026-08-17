@@ -175,11 +175,27 @@ EVIDENCE_ACT_NL = (r"\b(zou bevestigen|zou weerleggen|weerlegt|bevestigt|"
                    r"opnieuw draaien|draai .{0,15}opnieuw|laat zien|plak|"
                    r"lees terug)\b")
 
+# reference/disguised-asks.md tells Mimir to name what he is declining and say
+# who owns it. That instruction and the remedy scan collide: "the target tree
+# is a repair and belongs to the architect" contains a remedy phrase in order to
+# refuse it. Scoped to the sentence, so a remedy in its own sentence beside a
+# refusal in another is still caught.
+REFUSAL = (r"\b(not going to|will not|won'?t|cannot|can ?not|declin\w+|refus\w+|"
+           r"is a repair|are repairs|is the repair|belongs to|out of scope|"
+           r"outside (my|this|the)|not mine|not my (job|question|call)|"
+           r"icm-architect|the architect|the editor|i am not)\b")
+
+REFUSAL_NL = (r"\b(ga ik niet|doe ik niet|geef ik niet|weiger\w*|niet aan mij|"
+              r"hoort bij|is een reparatie|zijn reparaties|buiten (de )?scope|"
+              r"niet mijn|de architect|de editor|dat is niet)\b")
+
 LANGUAGES = {
     "en": {"rx": RX_PATTERNS, "cf": CF_PATTERNS, "act": EVIDENCE_ACT,
+           "refusal": REFUSAL,
            "stops": ("the", "and", "of", "that", "is", "not", "with", "this",
                      "which", "from", "does")},
     "nl": {"rx": RX_NL, "cf": CF_NL, "act": EVIDENCE_ACT_NL,
+           "refusal": REFUSAL_NL,
            "stops": ("de", "het", "een", "van", "dat", "niet", "wordt", "voor",
                      "met", "zijn", "die", "geen", "staat")},
 }
@@ -434,7 +450,10 @@ def check(finding_path, evidence_path, transcript_path=None, quiet=False):
         spec = LANGUAGES[lang]
     for pat in spec["rx"]:
         for m in re.finditer(pat, flat, re.I | re.M):
-            if re.search(spec["act"], _sentence_of(flat, m.start()), re.I):
+            sentence = _sentence_of(flat, m.start())
+            if re.search(spec["act"], sentence, re.I):
+                continue
+            if re.search(spec["refusal"], sentence, re.I):
                 continue
             failures.append(("NO-RX", "remedy language: %r" % m.group(0).strip()))
     # The removal test legitimately lives in WHY IT STOPS HERE, so the
@@ -446,6 +465,11 @@ def check(finding_path, evidence_path, transcript_path=None, quiet=False):
         cf_scannable = flat.replace(stops_flat, " " * len(stops_flat))
     for pat in spec["cf"]:
         for m in re.finditer(pat, cf_scannable, re.I):
+            # Same exemption as the remedy arm: naming the prohibition is not
+            # committing it. "it does not get to say what would have avoided
+            # it" is the rule being stated, not advice in the past tense.
+            if re.search(spec["refusal"], _sentence_of(cf_scannable, m.start()), re.I):
+                continue
             failures.append(("NO-RX",
                              "counterfactual (advice in the past tense): %r"
                              % m.group(0).strip()[:70]))
@@ -605,6 +629,7 @@ def selftest():
         ("bad-invented-number.md", "CITATIONS"),
         ("bad-prescription.md", "NO-RX"),
         ("bad-counterfactual.md", "NO-RX"),
+        ("bad-laundered-remedy.md", "NO-RX"),
         ("bad-jargon.md", "PLAIN"),
         ("bad-hidden-tie.md", "ABSTAIN"),
         ("bad-appendix.md", "NO-APPENDIX"),
