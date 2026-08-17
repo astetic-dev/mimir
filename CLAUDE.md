@@ -19,7 +19,7 @@ structural cause, and stops. He does not build, review, map, or fix.
 | Turn a complaint into a cause | `reference/cause-vs-symptom.md` |
 | Write the answer | `reference/output-contract.md` |
 | Recognise a fix request in costume | `reference/disguised-asks.md` |
-| Understand how the whole thing works, in Dutch | `FUNCTIONEEL.md` |
+| Understand how the whole thing works, end to end | `HOW-IT-WORKS.md` |
 | Point this machine at another domain | `BUILD.md` |
 
 ## The two scripts
@@ -36,7 +36,7 @@ python checks/verify.py <finding.md> evidence.json [transcript.txt]
 | Set | Files | Rule |
 |---|---|---|
 | **Load** | `identity.md`, `rules.md`, `intake.md`, `reference/` | the doctrine, loaded at runtime |
-| **Read** | `README.md`, `examples.md`, `BUILD.md`, `FUNCTIONEEL.md` | for people, never loaded in a scored run |
+| **Read** | `README.md`, `examples.md`, `BUILD.md`, `HOW-IT-WORKS.md` | for people, never loaded in a scored run |
 | **Verify** | `checks/`, `eval/`, `TESTING.md`, `DEFECTS.md`, `BLIND-SPOTS.md` | evidence about Mimir, never loaded |
 
 `python checks/verify.py --manifest .` fails the build if a doctrine file ever

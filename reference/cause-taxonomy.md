@@ -1,7 +1,9 @@
 # Cause taxonomy
 
 The bounded set of structural causes behind an ICM workspace that does not do what its owner
-expects. A named primary cause must come from this list.
+expects. A named primary cause must come from this list. There are twenty, numbered within seven
+layers; the numbers are an index for auditing and never a label to hand a reader
+(`reference/output-contract.md` 3b).
 
 Distilled from the ICM canon: the ten invariants in `icm-architect/SKILL.md`, the fifteen
 patterns and five-layer architecture in `_core/CONVENTIONS.md`, and the five principles in
@@ -166,6 +168,40 @@ was.
 **Not this family when.** One oversized input explains the whole overage. That is family 6, one
 step upstream, and naming family 7 there stops at the measurement instead of the reason.
 
+## 20. The contract omits what the step needs
+
+**What it is.** The contract exists, names exact paths, scopes its sections and opens in band -
+and the material the step's own output requires is not on the list at all. The step reads the
+factory and never the product, or reads the product and never the standard, and produces
+something shaped correctly with nothing in it.
+
+Families 4 to 7 all ask whether the declared inputs are *well declared*. This one asks whether
+they are *the right ones*. A contract can be perfect by every other measure and still send an
+agent to write a client report with no access to what the client's account did this month.
+
+**Fingerprint.** No single field. Read `stages[].declaredInputs[]` against what the stage's
+`Outputs` claims to produce and ask what a person would need to produce it. Two shapes recur and
+both are visible in the mined tree: a step whose inputs are all classified `L3` where its output
+requires per-run fact, and a step whose inputs are all `L4` where its output requires a standard.
+Where the workspace has no stage contracts (`form.guess: "specialist"`), the same question is
+asked of whatever file carries the step, and the miner cannot help - this is the one family that
+is read rather than measured.
+
+**Mistaken for.** *"The output is generic."* Also, and more expensively, mistaken for the tone or
+the template being wrong: the shape is fine, the words are fine, and there was nothing to put in
+them.
+
+**Neighbour.** Family 5 is an input named as a category instead of a location, where the harm is
+that the agent guesses and guesses differently each time. Here the agent does not guess: it
+reaches a gap the contract left and fills it with whatever the doctrine's fallback says, which is
+usually a placeholder or a generality. Convict family 5 when a named thing fails to resolve;
+convict this one when nothing was named at all.
+
+**Where it came from.** Added 2026-08-17, after the escape hatch fired twice on real workspaces
+for the same missing family - once on a drafting step whose inputs named the templates and the
+tone and never the project state, and once on a finding contract with no field for a decision its
+own procedure produces. See `DEFECTS.md` D8.
+
 ---
 
 # Layer 3 - Factory and product (L3 vs L4)
@@ -246,9 +282,17 @@ produces, or that does not exist. The chain is broken at a named joint. Pattern 
 handoff convention: stage N writes to its `output/`, stage N+1 reads from there.
 
 **Fingerprint.** `stages[].declaredInputs[]` with `exists: false`, or a path under an `output/`
-folder that appears in no `stages[].declaredOutputs[]`.
+folder that appears in no `stages[].declaredOutputs[]`, or an entry in `graph.brokenLinks[]`.
 
 **Mistaken for.** *"The agent hallucinated a file."* It was told the file would be there.
+
+**Read `graph.brokenLinks[]`, never `graph.dangling[]`.** The miner splits every unresolved
+pointer into `kind: "broken"` (it aims at this tree: a contract declares it, or it is written
+relative, or its first segment exists here) and `kind: "external"` (its first segment names
+nothing in this tree, so it is almost always a citation of another document). A folder that cites
+the ICM canon carries dozens of the second kind and none of them is a defect. Each entry also
+carries the source line in `context`, so the two-second check is available. A finding that
+convicts on `dangling` as a raw count has not looked.
 
 ## 13. Ghost wiring
 
@@ -257,7 +301,9 @@ file that no contract loads is not neutral: the next person builds on it, and th
 finds it by search and treats it as live. Cassini's version of this: "the name that looked wired
 - defined, exported, registered, called by nothing".
 
-**Fingerprint.** `graph.orphans[]` and `graph.dangling[]` non-empty.
+**Fingerprint.** `graph.orphans[]` non-empty, or `graph.brokenLinks[]` non-empty. Same warning as
+family 12: `graph.dangling[]` mixes broken links with citations of other documents, and only the
+`kind: "broken"` half is evidence of anything.
 
 **Mistaken for.** *"It reads the wrong things."*
 

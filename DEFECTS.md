@@ -70,10 +70,23 @@ both the file and the folder level, because Pattern 3 is written about folders
 and file-level mutual links within one layer are the documented ICM shape. See
 C7.
 
-**D4 - no behavioural run has happened (2026-08-16).** Eight rows in
-`TESTING.md` are `PENDING`. The deterministic gates are proved; diagnostic
-judgement is not. This entry stays open until at least B1, B2 and B3 have been
-run in fresh sessions by somebody, and it is the largest gap in the folder.
+**D4 - no run by an independent reader (2026-08-16, narrowed 2026-08-17).**
+
+*Original wording, kept because a defect log that quietly rewrites itself is not a log:* "no
+behavioural run has happened. Eight rows in `TESTING.md` are `PENDING`. The deterministic gates
+are proved; diagnostic judgement is not."
+
+**What changed on 2026-08-17.** B1 to B7 ran in fresh contexts. Six passed, B6 found the right
+cause and failed the run, and between them they surfaced six defects. Diagnostic judgement is no
+longer wholly unproven.
+
+**What is still open, and it is the whole of what remains.** Those runs were fresh contexts and
+**not independent readers**: same model family, every prompt written by the author of the
+doctrine and the answer keys. B8 - a person who did not build this, five minutes, `README.md`
+only - has not happened, and it is the one row that cannot be filled in from inside this folder.
+
+This entry stays open until B8 runs. It is no longer the largest gap; it is the last one of its
+kind.
 
 **D10 - the falsifier section is a loophole for remedies (2026-08-17).** `WHAT WOULD
 OVERTURN THIS` is meant to carry evidence acts. A remedy phrased as a hypothetical experiment
@@ -125,7 +138,15 @@ split had to be reported outside the finding, in ordinary prose, which is exactl
 thing that stops being reported once nobody is watching. Radix has this field; Mimir dropped it
 when the contract was compressed from Radix's seven-part shape to nine sections.
 
-**D8 - the taxonomy has no family for contract sufficiency (2026-08-17).** Layer 2 of
+**D8 - CLOSED 2026-08-17, same day, as family 20.** The gap below was real and is now
+`reference/cause-taxonomy.md` family 20, "the contract omits what the step needs". The original
+entry is kept because the way it was found is the point: the escape hatch fired twice on real
+workspaces before anyone thought to look for a missing family, which is the escape doing exactly
+the job it was built for. What remains open is the worry in the last line of the entry - a hole
+found by the first two real cases is unlikely to be the last one - and that now lives in
+`BLIND-SPOTS.md` rather than here.
+
+*Original entry:* The taxonomy has no family for contract sufficiency. Layer 2 of
 `reference/cause-taxonomy.md` covers the *shape* of a contract: does it exist (4), does it name
 paths (5), does it scope sections (6), is the load in band (7). It has no family for whether the
 **named inputs are the right ones** - whether the step's declared inputs include the material the

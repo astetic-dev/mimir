@@ -97,7 +97,14 @@ ruled-out work that makes the finding trustworthy.
 4. Ask outright: **has this workspace been changed since the failing run, and has this failure
    happened before?** A workspace edited after the run is not the workspace that failed, and a
    repair that did not hold is the strongest evidence you will get for step 7.
-5. **Do not interpret.** Do not form a hypothesis. This step establishes the ground.
+5. **Consider reproducing the failing step.** You are usually running with a shell, so the choice
+   between inferring behaviour and observing it is yours to make rather than a limit you are
+   under. Read `reference/evidence-grades.md` under *Reproduction* before you do: copy the
+   workspace to a scratch location and never run the original, and **do not reproduce at all** if
+   the step you would run sends mail, writes to a ticket system, calls a customer API, or commits
+   anything. Where reproduction is unsafe or unavailable, say so in the finding and work at the
+   tier below. Where it succeeds, you are on tier R and your behavioural claims are observations.
+6. **Do not interpret.** Do not form a hypothesis. This step establishes the ground.
 
 **Gate.**
 > Here is what I have and what I am missing. Tell me if something exists that I have listed as

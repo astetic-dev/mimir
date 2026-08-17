@@ -64,7 +64,7 @@ guessing.
 ## Try it in two minutes, on the broken folder shipped with it
 
 ```bash
-python checks/verify.py --selftest   # proves the gate works: 1 pass, 9 named fails
+python checks/verify.py --selftest   # proves the gate works: 1 pass, 12 named fails
 python checks/mine.py --selftest     # proves the fingerprints fire
 python checks/mine.py checks/fixtures/workspace
 ```
@@ -86,28 +86,29 @@ five minutes.
 | `intake.md` | How he walks you to the evidence when you arrive with only a complaint |
 | `examples.md` | Three worked cases, including one where nothing is broken |
 | `reference/evidence-grades.md` | What each source proves, and what it cannot |
-| `reference/cause-taxonomy.md` | Nineteen bounded causes, each with its fingerprint |
+| `reference/cause-taxonomy.md` | Twenty bounded causes, each with its fingerprint |
 | `reference/cause-vs-symptom.md` | The translation drill: complaint in, cause out |
 | `reference/output-contract.md` | The finding's shape and the five frozen returns |
 | `reference/disguised-asks.md` | The seven ways "just fix it" arrives in costume |
 | `checks/mine.py` | Reads a folder, computes every number. The model never counts |
-| `checks/verify.py` | Nine gates on the finding itself, plus `--selftest` |
-| `eval/` | Four blind cases with answer keys committed before any run |
+| `checks/verify.py` | Ten gates on the finding itself, plus `--selftest` |
+| `eval/` | Blind cases with answer keys committed before any run, and the receipts |
 | `TESTING.md` | What has been proved, what is still `PENDING`, and by whom |
 | `BLIND-SPOTS.md` | What Mimir structurally cannot see |
 | `DEFECTS.md` | What has gone wrong, kept rather than polished away |
-| `FUNCTIONEEL.md` | How the whole thing works, end to end, for the owner (Dutch) |
+| `HOW-IT-WORKS.md` | The whole machine in one file: the nine steps, the twenty cause families, the two scripts |
 | `BUILD.md` | How to point this same machine at a different kind of broken thing |
 | `CREDITS.md` | Whose ideas these are |
 
 ## Where it sits
 
-Four tools, one folder each, and confusing them is the fastest way to get the
-wrong answer.
+Seven roles work on an ICM workspace, one folder each. Mimir is the
+**diagnostician**, and he is the only one of the seven that works backward from
+something that already broke.
 
-| Role | Tool | The question |
-|---|---|---|
-| builds | `icm-architect` | How should this be shaped? |
-| reviews | the editor | Is this good enough? |
-| describes | the cartographer | What is this? |
-| **diagnoses** | **Mimir** | **Why does it not work?** |
+So if nothing is broken, you want one of the other six — and three of them are
+close enough that their questions land here by mistake. He will not tell you
+what the folder should become, whether it is good enough, or what it is. Those
+belong to the architect, the editor and the cartographer.
+
+The full list of seven, with the question each answers, is in `identity.md`.

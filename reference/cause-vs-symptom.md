@@ -14,7 +14,7 @@ middle column has renamed the complaint and stopped.
 | "Quality is slowly getting worse" | "The outputs are declining" | Stage 03 loads stage 02's previous output as its style reference, so each run learns from the worst work the workspace has ever produced |
 | "It invented a brand voice" | "It hallucinated" | `voice.md` still contains `{{VOICE_DESCRIPTION}}`, so the agent met a literal placeholder where a fact should be and filled the gap itself |
 | "It contradicts itself" | "The docs are inconsistent" | The retention rule has two homes and both read as authoritative, so the agent quotes whichever one the current step happened to load |
-| "The agent hallucinated a file" | "It made up a path" | Stage 03's Inputs name `../02-draft/output/brief.md`, which no stage's Outputs table produces |
+| "The agent hallucinated a file" | "It made up a path" | Stage 03's Inputs name a draft in stage 02's output folder, which no stage's Outputs table produces |
 | "It loses the thread halfway" | "The context is too big" | Stage 02's Inputs pull a 900-line reference in full where Pattern 4 would route to one section, so the step opens at four times the healthy band |
 | "It reads the wrong things" | "It picks bad files" | Six reference files are pointed at by nothing; the agent finds them by search and cannot tell a leftover from a live one |
 | "It never stops to let me steer" | "It is too autonomous" | No contract in the workspace has a human check, so there is no step at which steering is the work |

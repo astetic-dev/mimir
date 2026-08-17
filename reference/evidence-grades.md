@@ -13,7 +13,8 @@ from** (`EVIDENCE TIER` is a required section).
 
 | Tier | Evidence | Weight |
 |---|---|---|
-| **A** | The workspace tree **and** a transcript of one run where it went wrong | What was there to load, and what the agent actually loaded and did. The only tier that can reach layer 7. |
+| **R** | A **reproduction**: the workspace copied to a sandbox and the failing step actually run, with what it loaded recorded | The only tier where behaviour is *observed* rather than reported. See "Reproduction" below, and the hard limits on when it is allowed. |
+| **A** | The workspace tree **and** a transcript of one run where it went wrong | What was there to load, and what the agent actually loaded and did. |
 | **B** | The workspace tree, mined into `evidence.json` | Structural claims are provable. Behavioural claims are inferred from structure and must be marked `[inferred]`. |
 | **C** | A transcript alone | Shows what happened. Does not show what was available to load, so it cannot separate "the file was bad" from "the file was never read". |
 | **D** | The owner's account of the behaviour | "It keeps forgetting the voice rules." A presenting symptom, and a good one. Not a diagnosis. |
@@ -28,6 +29,33 @@ structural families and say plainly which conclusions would need a transcript. D
 a branch you *can* close for the one you cannot.
 
 ---
+
+## Reproduction (tier R)
+
+The tree shows what was available. A transcript shows what a model said it read. **A reproduction
+shows what actually happened**, and it is the only way out of the gap those two leave.
+
+**How.** Copy the workspace to a scratch location. Run the failing step there, exactly as its own
+contract describes it, in a context with no memory of this diagnosis. Record the files that were
+actually opened and the output that came back. That recording is an observation, so claims built
+on it are `[seen]` rather than `[inferred]`.
+
+**Never run against the original.** Copy first, always, and diagnose the copy. A workspace under
+diagnosis has already surprised its owner once.
+
+**Do not reproduce at all when the workspace reaches outside itself.** Read the contracts before
+you copy. If any step in the path you would run sends mail, writes to a ticket system, calls a
+customer API, moves files outside the workspace, or commits anything, **stop**: say the failing
+step cannot be safely reproduced and diagnose at tier A or B. A diagnostician that mails a client
+to find out why the mail was wrong has done more damage than the defect. This rule is not
+negotiable and it is not the owner's to waive mid-run: if they want it run anyway, that is their
+own step to take, in their own session, on their own account.
+
+**Other limits worth stating before you rely on it.** A reproduction runs today, under today's
+model, with today's version of the folder - so a reproduction that succeeds does not prove the
+failing run succeeded for the same reasons, only that the mechanism is or is not live now. And a
+run that behaves differently in the sandbox is itself a finding: something outside the folder was
+carrying weight.
 
 ## The workspace tree
 

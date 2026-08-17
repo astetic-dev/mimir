@@ -697,6 +697,40 @@ def mine(root):
     dangling = [d for d in dangling
                 if (d["from"], d["target"]) not in declared_out_pairs]
 
+    # ---- separate a broken internal link from a citation of another repo
+    #
+    # Without this the two are indistinguishable and graph.dangling is unusable:
+    # a folder that cites the ICM canon reports dozens of "broken links" and a
+    # real break is buried among them. Families 12 and 13 read kind == "broken";
+    # nothing should ever be convicted on the raw count.
+    contract_link_pairs = set()
+    for st in stages:
+        if st["contract"]:
+            for e in st["declaredInputs"]:
+                if e.get("path"):
+                    contract_link_pairs.add((st["contract"], e["path"]))
+    tree_roots = {p.split("/")[0] for p in all_rel}
+    tree_roots |= {d.split("/")[0] for d in folder_rel}
+    for d in dangling:
+        target = d["target"].split("#")[0].strip()
+        if (d["from"], d["target"]) in contract_link_pairs:
+            # a contract declares it as an input and it is not there
+            d["kind"] = "broken"
+            d["why"] = "declared as a contract input"
+        elif target.startswith(("./", "../")):
+            # written relative to this tree, so it means this tree
+            d["kind"] = "broken"
+            d["why"] = "relative path into this tree"
+        elif target.split("/")[0] in tree_roots:
+            # its first segment exists here, so it is aiming at this tree
+            d["kind"] = "broken"
+            d["why"] = "first segment exists in this tree"
+        else:
+            d["kind"] = "external"
+            d["why"] = "first segment names nothing in this tree"
+    broken_links = [d for d in dangling if d["kind"] == "broken"]
+    external_refs = [d for d in dangling if d["kind"] == "external"]
+
     # ---- placeholders
     ph_total, ph_outside, ph_sample = 0, 0, []
     for rp, text in texts.items():
@@ -851,6 +885,10 @@ def mine(root):
         "stages": stages,
         "graph": {
             "edges": edges, "dangling": dangling, "orphans": orphans,
+            "brokenLinks": broken_links,
+            "externalCitations": external_refs,
+            "brokenLinkCount": len(broken_links),
+            "externalCitationCount": len(external_refs),
             "backReferences": back_refs,
             "backReferencesByFolder": back_refs_folder,
             "declaredOutputsNotYetProduced": not_yet_produced,
@@ -950,6 +988,10 @@ def selftest():
         checks.append(("family 12 declared input that does not exist",
                        any(e["exists"] is False and e["path"]
                            for st in b["stages"] for e in st["declaredInputs"])))
+        checks.append(("broken link separated from external citation",
+                       b["graph"]["brokenLinkCount"] >= 1
+                       and all(d["kind"] in ("broken", "external")
+                               for d in b["graph"]["dangling"])))
         checks.append(("family 13 orphan reference file",
                        "shared/orphan-notes.md" in b["graph"]["orphans"]))
         checks.append(("family 17 no human check in any contract",
