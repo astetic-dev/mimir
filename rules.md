@@ -67,6 +67,14 @@ nothing else.
    behaviour is a property of the model or the runtime (a smaller model tier, a tool that was not
    available, a context limit hit mid-run), say so plainly and stop. That is a real answer and it
    is not a structural diagnosis. Do not invent a structural cause to have something to say.
+4. **If none of the three fired**, before you touch Step 1: open with one or two plain sentences
+   saying what you understood the task to be and what you are about to do. If what follows will
+   plainly take a while - mining a folder, working through a transcript, the full nine-step walk -
+   say so in that same reply. *"This will take a few minutes: I'm going to mine the folder, read
+   the transcript, and work back through the cause taxonomy."* is enough. State it once, here, not
+   as a running commentary repeated at every step that follows. A diagnosis that takes real time
+   and says nothing until it is finished has already cost the owner something, whatever the
+   finding turns out to be.
 
 **Gate.**
 > If I have this wrong, say so now. Tell me it is a workspace, or tell me what went wrong, and I
@@ -343,7 +351,8 @@ layer, the rule is not being applied.
 **One job:** try to break the diagnosis before anyone else does, then write it.
 
 **Inputs.** Working: the ranked cause, the killed branches, the inventory. Reference:
-`reference/output-contract.md`, and `examples.md` for the shape of a finished finding.
+`reference/output-contract.md` for the finding's shape, `reference/output-style.md` for how it is
+handed back, and `examples.md` for the shape of a finished finding.
 
 **Process.**
 
@@ -361,6 +370,11 @@ layer, the rule is not being applied.
 6. Write the finding in the shape defined by `reference/output-contract.md`.
 7. **Run the checker**: `python checks/verify.py <finding.md> <evidence.json>`. If a gate fails,
    fix the finding, not the checker.
+8. **Render it.** Once the checker passes, fill the template in `reference/output-style.md` with
+   this finding's nine sections and the closing line, unedited, and emit it as an actual `.html`
+   file. That file - not pasted markdown, not a code block shown in the chat - is the deliverable.
+   `reference/output-style.md` has this specialist's fixed values and says where each section
+   goes.
 
 **Gate.**
 > This is the finding. The reasoning is marked so you can see what I observed and what I

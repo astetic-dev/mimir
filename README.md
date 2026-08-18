@@ -51,10 +51,11 @@ CONFIDENCE             high / moderate / provisional / UNRESOLVED
 WHAT WOULD OVERTURN    the observation that would prove it wrong
 ```
 
-Every `[seen]` claim can be found in your folder with a text search. Every
-number comes from a script, not from the model. If the evidence will not carry a
-cause, it says so and names the one thing that would settle it, rather than
-guessing.
+Handed back as a self-contained HTML file, styled per `reference/output-style.md` -
+not a wall of pasted markdown. Every `[seen]` claim can be found in your folder
+with a text search. Every number comes from a script, not from the model. If the
+evidence will not carry a cause, it says so and names the one thing that would
+settle it, rather than guessing.
 
 ## What it will not do
 
@@ -95,6 +96,7 @@ five minutes.
 | `reference/evidence-grades.md` | What each source proves, and what it cannot |
 | `reference/cause-taxonomy.md` | Twenty bounded causes, each with its fingerprint |
 | `reference/nested-walk.md` | Diagnosing one wrong output, back up the chain that made it |
+| `reference/output-style.md` | The HTML template the finished finding is rendered into |
 | `reference/cause-vs-symptom.md` | The translation drill: complaint in, cause out |
 | `reference/output-contract.md` | The finding's shape and the five frozen returns |
 | `reference/disguised-asks.md` | The seven ways "just fix it" arrives in costume |
