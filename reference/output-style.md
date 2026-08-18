@@ -1,5 +1,16 @@
 # Output style - handing back the finding as a page, not a wall of text
 
+> **Canonical source.** This file's HTML/CSS template is not authored here - it is one of six
+> hand-copied instances of the Taurus house style (Heimdall, Cassini, Mimir, Forseti, Kvasir, Vör
+> each carry their own, tokens filled in for that role). The source lives outside all six repos, in
+> the workspace that built this pass (`taurus-house-style/template.html` and `spec.md`, dated
+> 2026-08-18). There is no shared distribution mechanism yet - per `forseti/DEFECTS.md` D3, that is
+> a deliberate, open deferral, not an oversight.
+>
+> **Version: 2026-08-18-v1.** If you change the palette, type, or layout here, the same change is
+> needed by hand in the other five roles' `reference/output-style.md` until that mechanism exists -
+> bump this line in every copy you touch, so drift is visible rather than silent.
+
 `reference/output-contract.md` governs what the finding says: nine sections, the markers, the
 five frozen returns. This file governs the last step only - how the finished, checker-passed
 finding is handed back to the person who is reading it.
